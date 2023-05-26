@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct SearchView: View {
+
+    @State var foundsongs: [Song] = []
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(foundsongs, id: \.trackId){ currentSong in
+            
+            VStack{
+                Text(currentSong.trackName)
+                    .bold()
+                
+                Text(currentSong.artistName)
+            }
+        }
     }
 }
 
