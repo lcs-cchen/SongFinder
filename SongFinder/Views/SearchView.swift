@@ -26,7 +26,7 @@ struct SearchView: View {
             }
         }
         .task {
-            foundsongs = await NetworkService.fetch()
+            foundsongs = await NetworkService.fetch(resultsFor: "radioactive")
         }
     }
 }
