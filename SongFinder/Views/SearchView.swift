@@ -21,6 +21,7 @@ struct SearchView: View {
                         .bold()
                  Spacer()
                 }
+                Text(currentSong.collectionName)
                 Text(currentSong.artistName)
             }
         }
