@@ -30,8 +30,11 @@ struct SearchView: View {
             }
         }
         .searchable(text: $searchText)
-        .task {
-            foundsongs = await NetworkService.fetch(resultsFor: "radioactive")
+        .onChange(of: searchText){ newSearchText in
+            Task{
+                foundsongs = await NetworkService.fetch(resultsFor: searchText)
+            }
+            
         }
     }
 }
